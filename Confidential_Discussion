@@ -1,0 +1,146 @@
+Delivered-To: therollercoastervibes@gmail.com
+Received: by 2002:a05:7412:d191:b0:106:1509:13f6 with SMTP id ba17csp1141441rdb;
+        Sat, 30 Mar 2024 04:22:21 -0700 (PDT)
+X-Received: by 2002:a9d:7b4b:0:b0:6e5:1c98:fd8d with SMTP id f11-20020a9d7b4b000000b006e51c98fd8dmr5063647oto.5.1711797741292;
+        Sat, 30 Mar 2024 04:22:21 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1711797741; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ydj0r/cq0Ry8F8s3GR34Ai9ZvyavHwsZBx6LBckdpHsDLt5htF+JJ8Y5lWRz3issD2
+         qUw56B8nAS4n/1eu2zqhioBzd/muXetIjl4CkUo9/mK5Afwu/a6WEifJcyo477Qbkvvu
+         JiWgPIBKrSTqk9jtpxu/9d43c4/6kIkNDTpE8rhA4ROP4drMJq3t/ywyk6ZvzlteXSoO
+         d7FiTf1D4HOz5WzHwjNDVNBLg/O9IpJ5LXR/jm5hjahtF62UC+tbUaDcpEZJ0yhnybGJ
+         GXEPLlo4zkoWgKLyLxZvZLAZdcTNDA9LP7zGhrKzLz0iJAFfFtlKho+6AiYh9g6iehqn
+         n7vA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=Fc//JJX0KNxSQWhG5QZMl18ZfzLYi5z4TfPuw38PJEY=;
+        fh=q9OE1j9KciR0GfgKBcmwAgZ6+gXvIc2KbcjuYQxbqIA=;
+        b=B7/no5RN+6iZl1KRQOPAMzOssmDhvz6pKGRJWd048ixguLiVN+mYEiALZdjawhSUlz
+         ER1tCay1k5Exat1QilEKK6GiduEaawyUZPSwnJKPEcXofSTqG66VQptoIOiECbfkPEiZ
+         t9Nm5qBJHJn3eYDosjhjTaY6BugEcIPkDrqn80HWI/oyEziDlRs8qlBpUzQyVmWGDfba
+         1YErTSxqjwD1i3UgMywRngKKWRZ9iBNqDRbewXlWxwbxocq43BpzaLMYhKRw1aIGHSye
+         decW5491zl+xcsOnYNr05f8lrw4OBhi2jymbIhSFYtWuJfdO/DgTGUUKU9ovYsxCnxjc
+         YTFA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=GA3SuRZz;
+       spf=pass (google.com: domain of anadrome.ctf@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=anadrome.ctf@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <anadrome.ctf@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id x10-20020a056830408a00b006e6cacbf20bsor2071786ott.5.2024.03.30.04.22.21
+        for <therollercoastervibes@gmail.com>
+        (Google Transport Security);
+        Sat, 30 Mar 2024 04:22:21 -0700 (PDT)
+Received-SPF: pass (google.com: domain of anadrome.ctf@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=GA3SuRZz;
+       spf=pass (google.com: domain of anadrome.ctf@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=anadrome.ctf@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1711797740; x=1712402540; dara=google.com;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=Fc//JJX0KNxSQWhG5QZMl18ZfzLYi5z4TfPuw38PJEY=;
+        b=GA3SuRZz4Jd3kdGMWlgoYUKngPFn8t26OEHwcokLdhUAS/AqnycxY0xy55N9U3+IRo
+         qKuj8XdPW5Ec8wWtT94s2hWTOQOZcjEc+ZSQXGPIg/nzDv6p+M3wQVdPyRd9qOvi435f
+         HvSzXfdTyLzeAE3HS1GTIarjtTmfe7i3NovLKkBVP5hBhvtILTSniFGQcU0J02fbpimJ
+         rHiAMq9BuoPAhKOvJP0MQkJSfbIFU7jz0XGOOKJSJ1UEgqfF1/Rg1O/DuYpLl/Glxc0F
+         LuxmkzBRR/H7JL8cMbzfx98Cyt8v7Hx/4ElySHn0KteWoyuJzF4g8vPE6vL/4B2gU3rm
+         Sd/Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1711797740; x=1712402540;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Fc//JJX0KNxSQWhG5QZMl18ZfzLYi5z4TfPuw38PJEY=;
+        b=umnu6Wk2sq1QfkP4ssZ6DOp1epG6VtZgFuU0B/W+eMBiu0nAeNOg9tYdQggOJJiOaB
+         qA/iw2XcskLEJ/KlmdCS9Rsf2iqX56FEY5Uw7ezxTIJ5XxWLSTMbmdglyJux2V7ZGv5q
+         Ih2hEgRyAl2ALp5aC2TagffWg2DGKKU2XkEisT1YUaTVtvqDhsUqND1zAzeRw5YkQSFd
+         pUGCBoGAkeTqy7u1rjozqJOeT6pxN7SdKkG/WIpymfQd9zJ5oKx5kDCIowPRwyN6uhi4
+         YetWv/L0r2hXNNOe6MnB2VklGKE7ajfg8BtpldRKsofY3RepxPEz0kGEmIj/lQtUI5Ay
+         s8zg==
+X-Gm-Message-State: AOJu0Yyf63ChZ1tjNsxmFYG/bfPMeF6ilg9uK1glywBOe8Y5bVphvjzk
+	Q/TH3qzmwtPNooEZlpImhlT8rSB8qKIcgHzPPOCLcW97jq/jWexyeGWWjKmVwSTyDPxhM4EgIxI
+	B35ca7zf0/cpGKYJtR+IUbarWkK/1aH3R
+X-Google-Smtp-Source: AGHT+IFbS2XLH1r+lDgEgqbESvZP65gEGuHZE31ZwaEQBNAIVGzr7/FIRrEOS/y396fgR161b5C7wEfZgG75FtAYvm4=
+X-Received: by 2002:a05:6358:8085:b0:17e:69cf:2105 with SMTP id
+ a5-20020a056358808500b0017e69cf2105mr5202540rwk.29.1711797740688; Sat, 30 Mar
+ 2024 04:22:20 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAEHw4aAwo0joPRfqGg9LyQjcS-Y0Yfu_5zsaVbSnXPeQXOH_QQ@mail.gmail.com>
+ <CANW1xjXKE9cFsHK1M07mRbebZJhYJWMcOLVer=qw-w0OSZZt9Q@mail.gmail.com>
+ <CAEHw4aBQicK0+Y7xWmcPsFW0PaNG7tqj8cRsk8K8dH8zk9FijQ@mail.gmail.com> <CANW1xjXefX3MMpXVm2C8uLduYAWsBwkvG6uXGKhL__L16WgecA@mail.gmail.com>
+In-Reply-To: <CANW1xjXefX3MMpXVm2C8uLduYAWsBwkvG6uXGKhL__L16WgecA@mail.gmail.com>
+From: Sundaran Pichai <anadrome.ctf@gmail.com>
+Date: Sat, 30 Mar 2024 16:52:09 +0530
+Message-ID: <CAEHw4aBpYPVzTiKdzqJDk2Xdq3N2BjW2Wm6JDZpQEyorhAHzEQ@mail.gmail.com>
+Subject: Re:
+To: Non Billable Gates <therollercoastervibes@gmail.com>
+Content-Type: multipart/alternative; boundary="00000000000042dddf0614def8e4"
+
+--00000000000042dddf0614def8e4
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+OK, thanks buddy.
+
+On Sat, Mar 30, 2024 at 4:51=E2=80=AFPM Non Billable Gates <
+therollercoastervibes@gmail.com> wrote:
+
+> I have kept the flag inside the Android challenge; it's there in the
+> GitHub repo.
+>
+> On Sat, Mar 30, 2024 at 4:50=E2=80=AFPM Sundaran Pichai <anadrome.ctf@gma=
+il.com>
+> wrote:
+>
+>> I don't have any clue where the flag is.
+>>
+>> On Sat, Mar 30, 2024 at 4:49=E2=80=AFPM Non Billable Gates <
+>> therollercoastervibes@gmail.com> wrote:
+>>
+>>> Just outguess, you will make it.
+>>>
+>>> On Sat, Mar 30, 2024 at 4:47=E2=80=AFPM Sundaran Pichai <anadrome.ctf@g=
+mail.com>
+>>> wrote:
+>>>
+>>>> Any leads?
+>>>>
+>>>
+
+--00000000000042dddf0614def8e4
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">OK, thanks buddy.</div><br><div class=3D"gmail_quote"><div=
+ dir=3D"ltr" class=3D"gmail_attr">On Sat, Mar 30, 2024 at 4:51=E2=80=AFPM N=
+on Billable Gates &lt;<a href=3D"mailto:therollercoastervibes@gmail.com">th=
+erollercoastervibes@gmail.com</a>&gt; wrote:<br></div><blockquote class=3D"=
+gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(20=
+4,204,204);padding-left:1ex"><div dir=3D"ltr">I have kept the flag inside t=
+he Android challenge; it&#39;s there in the GitHub repo.</div><br><div clas=
+s=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Sat, Mar 30, 202=
+4 at 4:50=E2=80=AFPM Sundaran Pichai &lt;<a href=3D"mailto:anadrome.ctf@gma=
+il.com" target=3D"_blank">anadrome.ctf@gmail.com</a>&gt; wrote:<br></div><b=
+lockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-le=
+ft:1px solid rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr">I don&#39;=
+t have any clue where the flag is.</div><br><div class=3D"gmail_quote"><div=
+ dir=3D"ltr" class=3D"gmail_attr">On Sat, Mar 30, 2024 at 4:49=E2=80=AFPM N=
+on Billable Gates &lt;<a href=3D"mailto:therollercoastervibes@gmail.com" ta=
+rget=3D"_blank">therollercoastervibes@gmail.com</a>&gt; wrote:<br></div><bl=
+ockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-lef=
+t:1px solid rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr">Just outgue=
+ss, you will make it.</div><br><div class=3D"gmail_quote"><div dir=3D"ltr" =
+class=3D"gmail_attr">On Sat, Mar 30, 2024 at 4:47=E2=80=AFPM Sundaran Picha=
+i &lt;<a href=3D"mailto:anadrome.ctf@gmail.com" target=3D"_blank">anadrome.=
+ctf@gmail.com</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" sty=
+le=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);paddi=
+ng-left:1ex"><div dir=3D"ltr">Any leads?</div>
+</blockquote></div>
+</blockquote></div>
+</blockquote></div>
+</blockquote></div>
+
+--00000000000042dddf0614def8e4--
